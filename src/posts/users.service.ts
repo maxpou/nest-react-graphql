@@ -5,7 +5,8 @@ import { User } from './models/user.model';
 export class UsersService {
   private users: User[] = [
     { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Richard Roe' },
+    { id: 2, name: 'Maxence Poutord' },
+    { id: 3, name: 'Bart Simpson' },
   ];
 
   findById(id: number): User {

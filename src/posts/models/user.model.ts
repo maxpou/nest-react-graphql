@@ -2,7 +2,6 @@ import { Directive, Field, ID, ObjectType } from '@nestjs/graphql';
 import { Post } from './post.model';
 
 @ObjectType()
-@Directive('@extends')
 @Directive('@key(fields: "id")')
 export class User {
   @Field(() => ID)
@@ -11,6 +10,6 @@ export class User {
   @Field()
   name: string;
 
-  @Field(() => [Post])
+  @Field(() => [Post], { description: 'Posts written by this guy' })
   posts?: Post[];
 }
