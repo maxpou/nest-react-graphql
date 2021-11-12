@@ -24,7 +24,13 @@ export class PostsResolver {
   }
 
   @Query((returns) => [Post])
-  posts(): Post[] {
+  posts(
+    @Args('title', { nullable: true, description: 'filter by post title' })
+    userQuery?: string,
+  ): Post[] {
+    if (userQuery) {
+      return this.postsService.findAllByName(userQuery);
+    }
     return this.postsService.findAll();
   }
 

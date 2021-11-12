@@ -29,6 +29,9 @@ type Post {
 
 type Query {
   post(id: ID!): Post!
-  posts: [Post!]!
+  posts(
+    """filter by post title"""
+    title: String
+  ): [Post!]!
   users: [User!]!
 }
