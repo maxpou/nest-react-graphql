@@ -9,10 +9,14 @@ import {
 import { Post } from './models/post.model';
 import { User } from './models/user.model';
 import { PostsService } from './posts.service';
+import { UsersService } from './users.service';
 
 @Resolver((of) => Post)
 export class PostsResolver {
-  constructor(private readonly postsService: PostsService) {}
+  constructor(
+    private readonly postsService: PostsService,
+    private readonly usersService: UsersService,
+  ) {}
 
   @Query((returns) => Post)
   post(@Args({ name: 'id', type: () => ID }) id: number): Post {
@@ -25,7 +29,7 @@ export class PostsResolver {
   }
 
   @ResolveField((of) => User)
-  user(@Parent() post: Post): any {
-    return { __typename: 'User', id: post.authorId };
+  user(@Parent() post: Post): User {
+    return this.usersService.findById(post.authorId);
   }
 }
