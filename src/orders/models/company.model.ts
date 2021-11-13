@@ -1,15 +1,15 @@
 import { Directive, Field, ID, ObjectType } from '@nestjs/graphql';
-import { Post } from './post.model';
+import { Order } from './order.model';
 
 @ObjectType()
 @Directive('@key(fields: "id")')
-export class User {
+export class Company {
   @Field(() => ID)
   id: number;
 
   @Field()
   name: string;
 
-  @Field(() => [Post], { description: 'Posts written by this guy' })
-  posts?: Post[];
+  @Field(() => [Order], { description: 'Orders created by this guy' })
+  orders?: Order[];
 }

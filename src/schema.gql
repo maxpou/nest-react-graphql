@@ -12,26 +12,27 @@ directive @requires(fields: String!) on FIELD_DEFINITION
 
 directive @provides(fields: String!) on FIELD_DEFINITION
 
-type User {
+type Company {
   id: ID!
   name: String!
 
-  """Posts written by this guy"""
-  posts: [Post!]!
+  """Orders created by this guy"""
+  orders: [Order!]!
 }
 
-type Post {
+type Order {
   id: ID!
   title: String!
-  authorId: Int!
-  user: User!
+  quantity: Float!
+  companyId: Int!
+  company: Company!
 }
 
 type Query {
-  post(id: ID!): Post!
-  posts(
-    """filter by post title"""
+  order(id: ID!): Order!
+  orders(
+    """filter by order title"""
     title: String
-  ): [Post!]!
-  users: [User!]!
+  ): [Order!]!
+  companies: [Company!]!
 }

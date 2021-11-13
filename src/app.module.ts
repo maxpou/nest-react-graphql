@@ -3,11 +3,11 @@ import { GraphQLFederationModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PostsModule } from './posts/posts.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
-    PostsModule,
+    OrdersModule,
     GraphQLFederationModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
