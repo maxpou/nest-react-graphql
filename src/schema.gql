@@ -16,8 +16,13 @@ type Company {
   id: ID!
   name: String!
 
-  """Orders created by this guy"""
+  """Orders created by this company"""
   orders: [Order!]!
+}
+
+type Material {
+  id: ID!
+  name: String!
 }
 
 type Order {
@@ -26,6 +31,8 @@ type Order {
   quantity: Float!
   companyId: Int!
   company: Company!
+  materialId: Int!
+  material: Material!
 }
 
 type Query {

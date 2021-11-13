@@ -10,6 +10,6 @@ export class Company {
   @Field()
   name: string;
 
-  @Field(() => [Order], { description: 'Orders created by this guy' })
+  @Field(() => [Order], { description: 'Orders created by this company' })
   orders?: Order[];
 }
