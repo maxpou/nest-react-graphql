@@ -1,0 +1,5 @@
+schema: '../nest-sample/src/schema.gql'
+generates:
+  ./src/types.d.ts:
+    plugins:
+      - typescript
