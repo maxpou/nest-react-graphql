@@ -9,7 +9,7 @@ import { OrdersModule } from './orders/orders.module';
   imports: [
     OrdersModule,
     GraphQLFederationModule.forRoot({
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'generated/schema.gql'),
     }),
   ],
   controllers: [AppController],

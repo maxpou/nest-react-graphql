@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @key(fields: String!) on OBJECT | INTERFACE
+
+directive @extends on OBJECT | INTERFACE
+
+directive @external on OBJECT | FIELD_DEFINITION
+
+directive @requires(fields: String!) on FIELD_DEFINITION
+
+directive @provides(fields: String!) on FIELD_DEFINITION
+
+type Company {
+  id: ID!
+  name: String!
+
+  """Orders created by this company"""
+  orders: [Order!]!
+}
+
+type Material {
+  id: ID!
+  name: String!
+}
+
+type Order {
+  id: ID!
+  title: String!
+  quantity: Float!
+  companyId: Int!
+  company: Company!
+  materialId: Int!
+  material: Material!
+}
+
+type Query {
+  order(id: ID!): Order!
+  orders(
+    """filter by order title"""
+    title: String
+  ): [Order!]!
+  companies: [Company!]!
+}
