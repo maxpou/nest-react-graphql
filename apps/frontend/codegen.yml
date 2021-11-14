@@ -1,4 +1,4 @@
-schema: '../nest-sample/src/schema.gql'
+schema: '../backend/generated/schema.gql'
 generates:
   ./src/types.d.ts:
     plugins:
