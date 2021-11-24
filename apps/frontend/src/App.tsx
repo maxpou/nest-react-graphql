@@ -1,15 +1,18 @@
 import React from 'react';
 import { Container, Header, Content } from 'rsuite';
 import { CompaniesList } from './components/CompaniesList';
+import { OrdersList } from './components/OrdersList';
 
 function App() {
   return (
-    <Container>
+    <Container style={{ width: '800px', margin: 'auto' }}>
       <Header>
         <h1>🚜 My cool App 🚜</h1>
       </Header>
       <Content>
         <CompaniesList />
+        <br />
+        <OrdersList />
       </Content>
     </Container>
   );

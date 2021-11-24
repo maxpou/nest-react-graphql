@@ -28,7 +28,7 @@ type Material {
 type Order {
   id: ID!
   title: String!
-  quantity: Float!
+  quantity: Int!
   companyId: Int!
   company: Company!
   materialId: Int!

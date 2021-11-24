@@ -11,7 +11,7 @@ export class Order {
   @Field()
   title: string;
 
-  @Field()
+  @Field((type) => Int)
   quantity: number;
 
   @Field((type) => Int)

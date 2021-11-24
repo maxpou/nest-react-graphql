@@ -32,7 +32,7 @@ export type Order = {
   id: Scalars['ID'];
   material: Material;
   materialId: Scalars['Int'];
-  quantity: Scalars['Float'];
+  quantity: Scalars['Int'];
   title: Scalars['String'];
 };
 

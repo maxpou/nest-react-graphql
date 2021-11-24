@@ -1,9 +1,8 @@
 # nest-react-graphql
 
-<p align="center"><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer"><img width="500" src="https://github.com/maxpou/nest-react-graphql/blob/main/docs/schema.png" alt="Application schema"></a></p>
+<p align="center"><img width="500" src="https://github.com/maxpou/nest-react-graphql/blob/main/docs/schema.png" alt="Application schema"></p>
 
 A React&NestJS application that integrates with [GraphQL](https://graphql.org/).
-
 
 ## 🛠 Tools
 

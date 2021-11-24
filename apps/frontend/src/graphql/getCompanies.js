@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const getCompanies = gql`
+export const GET_COMPANIES = gql`
   query Orders {
     companies {
       id

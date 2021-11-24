@@ -11,9 +11,27 @@ export class OrdersService {
       companyId: 1,
       materialId: 4,
     },
-    { id: 2, companyId: 1, title: 'Arm rest', quantity: 200, materialId: 4 },
-    { id: 3, companyId: 3, title: 'Y Stick', quantity: 5, materialId: 3 },
-    { id: 4, companyId: 2, title: 'spinning top', quantity: 4, materialId: 1 },
+    {
+      id: 2,
+      companyId: 1,
+      title: 'Arm rest',
+      quantity: 200,
+      materialId: 4,
+    },
+    {
+      id: 3,
+      companyId: 3,
+      title: 'Y Stick',
+      quantity: 5,
+      materialId: 3,
+    },
+    {
+      id: 4,
+      companyId: 2,
+      title: 'spinning top',
+      quantity: 4,
+      materialId: 1,
+    },
   ];
 
   findAllByCompanyId(companyId: number): Order[] {
