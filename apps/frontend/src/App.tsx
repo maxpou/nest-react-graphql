@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Header, Content } from 'rsuite';
 import { CompaniesList } from './components/CompaniesList';
 import { OrdersList } from './components/OrdersList';

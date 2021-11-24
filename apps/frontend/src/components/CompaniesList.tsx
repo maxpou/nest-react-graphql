@@ -1,24 +1,24 @@
 import { useQuery } from '@apollo/client';
-import { List } from 'rsuite';
-import { Company } from '../generated/types';
-import { GET_COMPANIES } from '../graphql/getCompanies';
+import { List, Panel } from 'rsuite';
+import { GET_COMPANIES, CompaniesData } from '../graphql/getCompanies';
 import { Error } from './Error';
 
 export function CompaniesList() {
-  const { loading, error, data } = useQuery<any>(GET_COMPANIES);
-
-  console.log({ loading, error, data });
+  const { loading, error, data } = useQuery<CompaniesData>(GET_COMPANIES);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <Error />;
 
   return (
     <div>
-      <List>
-        {data.companies.map((company: Company) => (
-          <List.Item key={company.id}>{company.name}</List.Item>
-        ))}
-      </List>
+      <Panel header="List of companies" bordered shaded>
+        <List>
+          {data &&
+            data.companies.map((company) => (
+              <List.Item key={company.id}>{company.name}</List.Item>
+            ))}
+        </List>
+      </Panel>
     </div>
   );
 }
