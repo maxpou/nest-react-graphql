@@ -1,11 +1,28 @@
 {
   "name": "nest-react-graphql",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Maxence Poutord <maxence.poutord@gmail.com>",
-  "license": "MIT",
+  "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/*"
-  ]
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "start": "turbo run start --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "all": "turbo run build test lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint-config-custom": "latest",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "npm@8.5.0"
 }

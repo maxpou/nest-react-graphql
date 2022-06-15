@@ -1,0 +1,23 @@
+{
+  "name": "fees",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "@types/jest": "^27.5.1",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "jest": "^28.1.0",
+    "tsconfig": "*",
+    "typescript": "4.3.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

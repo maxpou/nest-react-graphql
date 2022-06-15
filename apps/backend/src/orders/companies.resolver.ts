@@ -4,14 +4,14 @@ import { Company } from './models/company.model';
 import { OrdersService } from './orders.service';
 import { CompaniesService } from './companies.service';
 
-@Resolver((of) => Company)
+@Resolver(() => Company)
 export class CompaniesResolver {
   constructor(
     private readonly ordersService: OrdersService,
     private readonly companiesService: CompaniesService,
   ) {}
 
-  @Query((returns) => [Company])
+  @Query(() => [Company])
   companies(): Company[] {
     return this.companiesService.findAll();
   }

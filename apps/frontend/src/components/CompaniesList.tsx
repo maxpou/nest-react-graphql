@@ -3,7 +3,7 @@ import { List, Panel } from 'rsuite';
 import { GET_COMPANIES, CompaniesData } from '../graphql/getCompanies';
 import { Error } from './Error';
 
-export function CompaniesList() {
+export function CompaniesList(): JSX.Element {
   const { loading, error, data } = useQuery<CompaniesData>(GET_COMPANIES);
 
   if (loading) return <p>Loading...</p>;

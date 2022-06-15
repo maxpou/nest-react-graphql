@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { Input, InputGroup, List, Panel } from 'rsuite';
 import SearchIcon from '@rsuite/icons/Search';
 import { GET_ORDERS, OrdersData } from '../graphql/getOrders';
 import { Error } from './Error';
-import { useState } from 'react';
+import { applyFeesToPrice } from 'fees';
 import { QueryOrdersArgs } from '../generated/types';
 
-export function OrdersList() {
+export function OrdersList(): JSX.Element {
   const [filterText, setFilterText] = useState<string>('');
   const { loading, error, data } = useQuery<OrdersData, QueryOrdersArgs>(
     GET_ORDERS,
@@ -37,10 +38,12 @@ export function OrdersList() {
           {data &&
             data.orders.map((order) => (
               <List.Item key={order.id}>
-                {order.title} (by {order.company.name}) - {order.quantity}{' '}
-                pieces needed
+                {order.title} in {order.material.name} (by {order.company.name})
+                - {order.quantity} pieces needed
                 <br />
-                built with {order.material.name}
+                total transaction:{' '}
+                {applyFeesToPrice(order.quantity * order.unitPrice)}€ (including{' '}
+                {order.feesPercentage}% transation fees)
               </List.Item>
             ))}
         </List>

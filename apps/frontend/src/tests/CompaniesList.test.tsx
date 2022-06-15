@@ -24,7 +24,7 @@ const mockCompanies = [
   },
 ];
 
-test('renders learn react link', async () => {
+test('renders company list', async () => {
   render(
     <MockedProvider mocks={mockCompanies} addTypename={false}>
       <CompaniesList />

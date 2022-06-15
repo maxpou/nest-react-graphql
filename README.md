@@ -21,9 +21,8 @@ _Note:_ this project uses Nestjs's ["code first" approach](https://docs.nestjs.c
 # install
 npm install
 
-# start app (requires npm7+)
-npm start --workspace=frontend
-npm start --workspace=backend
+# start app (requires npm8+)
+npm start
 
 # generate schema
 npm run generate --workspace=frontend

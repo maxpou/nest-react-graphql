@@ -13,7 +13,7 @@ import { OrdersService } from './orders.service';
 import { CompaniesService } from './companies.service';
 import { MaterialsService } from './materials.service';
 
-@Resolver((of) => Order)
+@Resolver(() => Order)
 export class OrdersResolver {
   constructor(
     private readonly ordersService: OrdersService,
@@ -21,12 +21,12 @@ export class OrdersResolver {
     private readonly materialsService: MaterialsService,
   ) {}
 
-  @Query((returns) => Order)
+  @Query(() => Order)
   order(@Args({ name: 'id', type: () => ID }) id: number): Order {
     return this.ordersService.findOne(id);
   }
 
-  @Query((returns) => [Order])
+  @Query(() => [Order])
   orders(
     @Args('title', { nullable: true, description: 'filter by order title' })
     userQuery?: string,
@@ -37,12 +37,12 @@ export class OrdersResolver {
     return this.ordersService.findAll();
   }
 
-  @ResolveField((of) => Company)
+  @ResolveField(() => Company)
   company(@Parent() order: Order): Company {
     return this.companiesService.findById(order.companyId);
   }
 
-  @ResolveField((of) => Material)
+  @ResolveField(() => Material)
   material(@Parent() order: Order): Material {
     return this.materialsService.findById(order.materialId);
   }
