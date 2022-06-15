@@ -29,6 +29,8 @@ type Order {
   id: ID!
   title: String!
   quantity: Int!
+  unitPrice: Float!
+  feesPercentage: Float!
   companyId: Int!
   company: Company!
   materialId: Int!

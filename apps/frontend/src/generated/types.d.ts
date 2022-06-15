@@ -29,11 +29,13 @@ export type Order = {
   __typename?: 'Order';
   company: Company;
   companyId: Scalars['Int'];
+  feesPercentage: Scalars['Float'];
   id: Scalars['ID'];
   material: Material;
   materialId: Scalars['Int'];
   quantity: Scalars['Int'];
   title: Scalars['String'];
+  unitPrice: Scalars['Float'];
 };
 
 export type Query = {

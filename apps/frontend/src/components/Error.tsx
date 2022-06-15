@@ -1,4 +1,4 @@
-export const Error = () => {
+export const Error = (): JSX.Element => {
   return (
     <div className="error">
       <h2>🤦‍♂️ ERROR!!!</h2>

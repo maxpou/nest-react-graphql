@@ -2,7 +2,7 @@ import { Container, Header, Content } from 'rsuite';
 import { CompaniesList } from './components/CompaniesList';
 import { OrdersList } from './components/OrdersList';
 
-function App() {
+function App(): JSX.Element {
   return (
     <Container style={{ width: '800px', margin: 'auto' }}>
       <Header>

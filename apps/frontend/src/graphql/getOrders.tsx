@@ -11,6 +11,8 @@ export const GET_ORDERS = gql`
       id
       title
       quantity
+      unitPrice
+      feesPercentage
       material {
         name
       }

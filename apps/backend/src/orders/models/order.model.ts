@@ -1,4 +1,4 @@
-import { Directive, Field, ID, Int, ObjectType } from '@nestjs/graphql';
+import { Directive, Field, ID, Int, ObjectType, Float } from '@nestjs/graphql';
 import { Company } from './company.model';
 import { Material } from './material.model';
 
@@ -13,6 +13,12 @@ export class Order {
 
   @Field((type) => Int)
   quantity: number;
+
+  @Field((type) => Float)
+  unitPrice: number;
+
+  @Field((type) => Float)
+  feesPercentage: number;
 
   @Field((type) => Int)
   companyId: number;

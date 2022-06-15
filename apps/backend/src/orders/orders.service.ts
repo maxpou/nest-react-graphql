@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Order } from './models/order.model';
+import { getFeesPercentage } from 'fees';
 
 @Injectable()
 export class OrdersService {
@@ -8,6 +9,8 @@ export class OrdersService {
       id: 1,
       title: 'Chair wheels',
       quantity: 500,
+      unitPrice: 23,
+      feesPercentage: getFeesPercentage(23 * 500),
       companyId: 1,
       materialId: 4,
     },
@@ -16,6 +19,8 @@ export class OrdersService {
       companyId: 1,
       title: 'Arm rest',
       quantity: 200,
+      unitPrice: 55,
+      feesPercentage: getFeesPercentage(55 * 200),
       materialId: 4,
     },
     {
@@ -23,6 +28,8 @@ export class OrdersService {
       companyId: 3,
       title: 'Y Stick',
       quantity: 5,
+      unitPrice: 3.5,
+      feesPercentage: getFeesPercentage(3.5 * 5),
       materialId: 3,
     },
     {
@@ -30,6 +37,8 @@ export class OrdersService {
       companyId: 2,
       title: 'spinning top',
       quantity: 4,
+      unitPrice: 2.5,
+      feesPercentage: getFeesPercentage(2.5 * 4),
       materialId: 1,
     },
   ];
