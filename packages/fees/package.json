@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src/**/*.ts"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.17.12",
